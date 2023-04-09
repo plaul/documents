@@ -59,25 +59,13 @@ As a result, if our endpoint requests data from an external API that takes a cer
 
 This issue becomes even more significant if our endpoint communicates with multiple external endpoints. If each call blocks, we must wait for the first external API to respond, then wait for the second, and so on (If one endpoint's results aren't needed for others, external requests can be performed concurrently which we will discuss later).
 
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](fig2.PNG)
-
 
 Knowing that an endpoint will be blocked while it waits for a method to complete, you might wonder what happens when a server receives multiple simultaneous requests from various clients. Will they all be blocked, forcing their respective clients to wait for the slow endpoint to unblock when it finally returns the response?
 
 Tomcat, along with similar Java Servlet Containers, addresses this issue using threads. For each incoming request, Tomcat assigns the request to a Java Thread responsible for managing all aspects related to that specific request, as depicted below.
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](fig3.PNG)
-
 
 Tomcat however, does not spawn a new thread for each request since threads are resource-intensive to create. Instead, Tomcat utilises a thread from a pool of pre-existing threads.
 
