@@ -54,7 +54,7 @@ Java, in conjunction with the traditional Spring Boot Package we're using, emplo
 As a result, if our endpoint requests data from an external API that takes a certain amount of time to respond, our endpoint will be blocked until it eventually receives a response, as illustrated below.
 
 
-![alt_text](p1.png)
+![alt_text](fig1.PNG)
 
 
 This issue becomes even more significant if our endpoint communicates with multiple external endpoints. If each call blocks, we must wait for the first external API to respond, then wait for the second, and so on (If one endpoint's results aren't needed for others, external requests can be performed concurrently which we will discuss later).
