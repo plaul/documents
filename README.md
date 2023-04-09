@@ -1,4 +1,4 @@
-## REST Endpoints using External Services
+## REST Endpoints Using External Services
 
 It is crucial for modern software developers to possess the skills to create not only simple CRUD (Create, Read, Update, and Delete) endpoints but also endpoints that utilise services provided by external APIs, such as for example AI-based ones. This is important for several reasons:
 
