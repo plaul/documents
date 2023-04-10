@@ -1,4 +1,6 @@
 title:            xxxx
-longtitle:        xxxxxxx
+longtitle:        aaaaaaaaaa
 
 remote_theme:     sighingnow/jekyll-gitbook
+toc:
+  enabled: true
